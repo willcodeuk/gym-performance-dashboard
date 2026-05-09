@@ -61,17 +61,21 @@ Five related tables modelled as a star schema with a `Dates` dimension table at 
 ![Overview](screenshots/overview.png)
 Global KPIs and the headline visual — weighted pull-up progression from +27.5kg to +41kg over 14 months.
 
+
 ### 2. Strength
 ![Strength](screenshots/strength.png)
 Exercise-level drill-down with filterable strength progression line chart, tonnage by muscle group, and session-level KPIs that respond to the exercise slicer.
+
 
 ### 3. Recovery & Performance
 ![Recovery](screenshots/recovery.png)
 Sleep vs energy scatter, energy and motivation trends over time, average energy by training split, and stress vs session duration cross-analysis.
 
+
 ### 4. Body Composition
 ![Body Composition](screenshots/body-composition.png)
 Lean mass vs bodyweight dual-line chart showing bulk/cut phases, body fat % trend, and monthly training frequency.
+
 
 ### 5. Nutrition
 ![Nutrition](screenshots/nutrition.png)
