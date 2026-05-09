@@ -1,4 +1,4 @@
-# 🏋️ Gym Performance Dashboard
+# Gym Performance Dashboard
 
 An end-to-end data analytics project tracking 14 months of training data across strength, recovery, body composition, and nutrition. Built in Power BI Service using a structured relational dataset modelled as a star schema.
 
@@ -6,7 +6,7 @@ An end-to-end data analytics project tracking 14 months of training data across 
 
 ---
 
-## 📊 Project Overview
+## Project Overview
 
 This dashboard analyses the training data of a natural intermediate-to-advanced lifter (25M, 72–78kg) across the period **March 2025 – May 2026**. The goal was to demonstrate real-world data modelling, DAX measure writing, and multi-page dashboard design using Power BI.
 
@@ -14,7 +14,7 @@ The dataset was synthetically generated to represent realistic human training pa
 
 ---
 
-## 🛠️ Tools Used
+## Tools Used
 
 | Tool | Purpose |
 |---|---|
@@ -25,7 +25,7 @@ The dataset was synthetically generated to represent realistic human training pa
 
 ---
 
-## 📁 Dataset Structure
+## Dataset Structure
 
 Five related tables modelled as a star schema with a `Dates` dimension table at the centre:
 
@@ -43,7 +43,7 @@ Five related tables modelled as a star schema with a `Dates` dimension table at 
 
 ---
 
-## 📈 Dashboard Pages
+## Dashboard Pages
 
 ### 1. Overview
 ![Overview](screenshots/overview.png)
@@ -67,10 +67,10 @@ Daily calorie intake mirroring training phases, protein adherence vs 150g target
 
 ---
 
-## 🔍 Key Insights
+## Key Insights
 
-- **Strength progressed non-linearly** — weighted pull-up top set increased 49% over 14 months (+27.5kg → +41kg) but included three distinct plateaus and two regression periods, matching real-world intermediate progression patterns.
-- **Sleep quality correlates with training energy** — months averaging 7.3+ hours of sleep consistently showed higher average energy scores (8.5+), visible in the Sleep vs Energy scatter on the Recovery page.
+- **Strength progressed non-linearly** — the average weight added to the heaviest lift (weighted pull-ups) for the top sets each month went up by an average of 49% per year, or from a total increase of +27.5 kg to +41 kg. However, there were also 2 regression periods and 3 periods of "plateau" that fit into this pattern, which is consistent with what would be expected when progressing through levels at which one may experience periods of progress and then less or even negative progress.
+- **Sleep quality correlates with training energy** — on average, every month that had an average of 7.3+ hours of sleep averaged energy scores above 8.5+, and this can be seen visually on the Recovery page (Sleep vs. Energy).
 - **Bulk/cut cycles are clearly visible across tables** — bodyweight, body fat %, and calorie intake all rise and fall in sync across three phases, with lean mass remaining relatively stable (65–67kg) throughout.
 - **Protein target adherence was 61%** — despite a 150g/day target, roughly 4 in 10 days fell short, with the worst adherence during high-stress and holiday periods.
 - **Cheat meal frequency peaks in winter** — January 2026 shows the highest monthly cheat meal count (5), coinciding with the holiday break visible as a training dip on the Body Composition page.
@@ -78,7 +78,7 @@ Daily calorie intake mirroring training phases, protein adherence vs 150g target
 
 ---
 
-## ⚙️ DAX Measures
+## DAX Measures
 
 Key measures created in the semantic model:
 
@@ -103,21 +103,6 @@ CALCULATE(COUNTROWS(exercise_performance), exercise_performance[pr_achieved] = "
 
 ---
 
-## 📝 Dataset Note
+## Dataset Note
 
 The dataset was synthetically generated using Python to represent realistic training patterns for a natural intermediate lifter. It intentionally includes human inconsistencies: missed sessions, strength regressions, fatigue periods, bad nights of sleep, and motivational dips. It is not real personal data.
-
-The generation script is available in `data/generate.py`.
-
----
-
-## 🚀 How to Use
-
-1. Clone this repository
-2. Open `data/gym_dataset.xlsx` in Excel to explore the raw data
-3. Import into Power BI Desktop or Service using Get Data → Excel Workbook
-4. Recreate the star schema relationships and DAX measures as documented above
-
----
-
-*Built as a portfolio project to demonstrate Power BI data modelling, DAX, and dashboard design skills.*
