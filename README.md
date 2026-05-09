@@ -1,10 +1,123 @@
-gym-performance-dashboard/
-├── README.md          ← the file above
-├── data/
-│   └── gym_dataset.xlsx
-├── screenshots/
-│   ├── overview.png
-│   ├── strength.png
-│   ├── recovery.png
-│   ├── body-composition.png
-│   └── nutrition.png
+# 🏋️ Gym Performance Dashboard
+
+An end-to-end data analytics project tracking 14 months of training data across strength, recovery, body composition, and nutrition. Built in Power BI Service using a structured relational dataset modelled as a star schema.
+
+![Overview](screenshots/overview.png)
+
+---
+
+## 📊 Project Overview
+
+This dashboard analyses the training data of a natural intermediate-to-advanced lifter (25M, 72–78kg) across the period **March 2025 – May 2026**. The goal was to demonstrate real-world data modelling, DAX measure writing, and multi-page dashboard design using Power BI.
+
+The dataset was synthetically generated to represent realistic human training patterns — including plateaus, deload weeks, illness periods, holiday breaks, bulk/cut phases, and personal records — making it suitable for meaningful analytical insight.
+
+---
+
+## 🛠️ Tools Used
+
+| Tool | Purpose |
+|---|---|
+| Python (pandas, numpy) | Dataset generation |
+| Microsoft Excel | Data storage and formatting |
+| Power BI Service | Data modelling, DAX, dashboard design |
+| GitHub | Version control and portfolio hosting |
+
+---
+
+## 📁 Dataset Structure
+
+Five related tables modelled as a star schema with a `Dates` dimension table at the centre:
+
+| Table | Rows | Description |
+|---|---|---|
+| `workout_log` | 266 | One row per session — split, duration, sleep, energy, bodyweight |
+| `exercise_performance` | 5,380 | One row per set — exercise, weight, reps, RPE, PR flag |
+| `body_metrics` | 306 | Bodyweight, body fat %, pump rating, confidence |
+| `nutrition` | 389 | Calories, protein, water, cheat meals, supplements |
+| `recovery_lifestyle` | 374 | Sleep quality, soreness, mood, alcohol, social events |
+
+**Relationships:**
+- `workout_log[session_id]` → `exercise_performance[session_id]` (1:many)
+- All tables → `Dates[Date]` via date column (many:1)
+
+---
+
+## 📈 Dashboard Pages
+
+### 1. Overview
+![Overview](screenshots/overview.png)
+Global KPIs and the headline visual — weighted pull-up progression from +27.5kg to +41kg over 14 months.
+
+### 2. Strength
+![Strength](screenshots/strength.png)
+Exercise-level drill-down with filterable strength progression line chart, tonnage by muscle group, and session-level KPIs that respond to the exercise slicer.
+
+### 3. Recovery & Performance
+![Recovery](screenshots/recovery.png)
+Sleep vs energy scatter, energy and motivation trends over time, average energy by training split, and stress vs session duration cross-analysis.
+
+### 4. Body Composition
+![Body Composition](screenshots/body-composition.png)
+Lean mass vs bodyweight dual-line chart showing bulk/cut phases, body fat % trend, and monthly training frequency.
+
+### 5. Nutrition
+![Nutrition](screenshots/nutrition.png)
+Daily calorie intake mirroring training phases, protein adherence vs 150g target, and monthly cheat meal frequency.
+
+---
+
+## 🔍 Key Insights
+
+- **Strength progressed non-linearly** — weighted pull-up top set increased 49% over 14 months (+27.5kg → +41kg) but included three distinct plateaus and two regression periods, matching real-world intermediate progression patterns.
+- **Sleep quality correlates with training energy** — months averaging 7.3+ hours of sleep consistently showed higher average energy scores (8.5+), visible in the Sleep vs Energy scatter on the Recovery page.
+- **Bulk/cut cycles are clearly visible across tables** — bodyweight, body fat %, and calorie intake all rise and fall in sync across three phases, with lean mass remaining relatively stable (65–67kg) throughout.
+- **Protein target adherence was 61%** — despite a 150g/day target, roughly 4 in 10 days fell short, with the worst adherence during high-stress and holiday periods.
+- **Cheat meal frequency peaks in winter** — January 2026 shows the highest monthly cheat meal count (5), coinciding with the holiday break visible as a training dip on the Body Composition page.
+- **Training consistency held across events** — despite two illness periods, a summer holiday, and a Christmas break, monthly session count rarely dropped below 15, demonstrating the value of planned deloads over forced rest.
+
+---
+
+## ⚙️ DAX Measures
+
+Key measures created in the semantic model:
+
+```dax
+Total Tonnage (kg) = 
+SUMX(exercise_performance, exercise_performance[weight_kg] * exercise_performance[reps])
+
+Avg Lean Mass (kg) = 
+CALCULATE(
+    AVERAGEX(body_metrics, body_metrics[bodyweight_kg] * (1 - body_metrics[body_fat_pct] / 100))
+)
+
+Protein Target % = 
+DIVIDE(
+    CALCULATE(COUNTROWS(nutrition), nutrition[protein_g] >= 150),
+    COUNTROWS(nutrition), 0
+) * 100
+
+Total PRs = 
+CALCULATE(COUNTROWS(exercise_performance), exercise_performance[pr_achieved] = "Yes")
+```
+
+---
+
+## 📝 Dataset Note
+
+The dataset was synthetically generated using Python to represent realistic training patterns for a natural intermediate lifter. It intentionally includes human inconsistencies: missed sessions, strength regressions, fatigue periods, bad nights of sleep, and motivational dips. It is not real personal data.
+
+The generation script is available in `data/generate.py`.
+
+---
+
+## 🚀 How to Use
+
+1. Clone this repository
+2. Open `data/gym_dataset.xlsx` in Excel to explore the raw data
+3. Import into Power BI Desktop or Service using Get Data → Excel Workbook
+4. Recreate the star schema relationships and DAX measures as documented above
+
+---
+
+*Built as a portfolio project to demonstrate Power BI data modelling, DAX, and dashboard design skills.*
