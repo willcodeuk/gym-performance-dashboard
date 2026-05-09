@@ -10,8 +10,7 @@ A comprehensive end-to-end data analysis project that captures 14 months of data
 
 This dashboard analyses the training data of a natural intermediate-to-advanced lifter (25M, 72–78kg) across the period **March 2025 – May 2026**. The goal was to demonstrate real-world data modelling, DAX measure writing, and multi-page dashboard design using Power BI.
 
-The synthetic data set is designed to reflect real world human training patterns – plateau’s, deloading weeks, sickness/illness periods, vacation/holiday breaks, bulking/cutting phases, and PRs etc. allowing us to draw meaningful insights from the data.
----
+The synthetic data set is designed to reflect real world human training patterns – plateau’s, deloading weeks, sickness/illness periods, vacation/holiday breaks, bulking/cutting phases, and PRs etc. allowing us to draw meaningful insights from the data.---
 
 ## Tools Used
 
