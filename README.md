@@ -1,6 +1,6 @@
 # Gym Performance Dashboard
 
-An end-to-end data analytics project tracking 14 months of training data across strength, recovery, body composition, and nutrition. Built in Power BI Service using a structured relational dataset modelled as a star schema.
+A comprehensive end-to-end data analysis project that captures 14 months of data covering strength, recovery, body composition, and nutrition. Developed using Power BI Service utilizing a structured relational data model (star schema).
 
 ![Overview](screenshots/overview.png)
 
@@ -10,8 +10,7 @@ An end-to-end data analytics project tracking 14 months of training data across 
 
 This dashboard analyses the training data of a natural intermediate-to-advanced lifter (25M, 72–78kg) across the period **March 2025 – May 2026**. The goal was to demonstrate real-world data modelling, DAX measure writing, and multi-page dashboard design using Power BI.
 
-The dataset was synthetically generated to represent realistic human training patterns — including plateaus, deload weeks, illness periods, holiday breaks, bulk/cut phases, and personal records — making it suitable for meaningful analytical insight.
-
+The synthetic data set is designed to reflect real world human training patterns – plateau’s, deloading weeks, sickness/illness periods, vacation/holiday breaks, bulking/cutting phases, and PRs etc. allowing us to draw meaningful insights from the data.
 ---
 
 ## Tools Used
