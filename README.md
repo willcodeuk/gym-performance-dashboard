@@ -43,12 +43,17 @@ Five related tables modelled as a star schema with a `Dates` dimension table at 
 
 ## Key Findings
 
-Weighted pull-up top set increased 49% over 14 months (+27.5kg → +41kg), with three distinct plateaus and two regression periods reflecting real intermediate progression
-Protein targets (150g/day) were met on only 61% of days — adherence dropped noticeably during high-stress and holiday periods
-Months averaging 7.3+ hours of sleep consistently showed average energy scores above 8.5, compared to sub-7.0 in low-sleep months
-Lean mass held stable at 65–67kg across two full bulk/cut cycles, with total bodyweight swinging 5kg either side — indicating composition quality rather than just weight change
-Monthly cheat meal frequency peaked at 5 in January 2026 (holiday break), coinciding with the lowest training session count of the tracked period
-Total training volume across 14 months: 266 sessions, 5,380 sets, 2.79M kg lifted
+- Weighted pull-up top set increased 49% over 14 months (+27.5kg → +41kg), with three distinct plateaus and two regression periods reflecting real intermediate progression
+  
+- Protein targets (150g/day) were met on only 61% of days — adherence dropped noticeably during high-stress and holiday periods
+
+- Months averaging 7.3+ hours of sleep consistently showed average energy scores above 8.5, compared to sub-7.0 in low-sleep months
+
+- Lean mass held stable at 65–67kg across two full bulk/cut cycles, with total bodyweight swinging 5kg either side — indicating composition quality rather than just weight change
+
+- Monthly cheat meal frequency peaked at 5 in January 2026 (holiday break), coinciding with the lowest training session count of the tracked period
+
+- Total training volume across 14 months: 266 sessions, 5,380 sets, 2.79M kg lifted
 
 ## Dashboard Pages
 
