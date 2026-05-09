@@ -118,10 +118,15 @@ CALCULATE(COUNTROWS(exercise_performance), exercise_performance[pr_achieved] = "
 ## Skills Demonstrated
 
 - Synthetic dataset generation using Python with realistic statistical noise and life event modelling
+  
 - Star schema data modelling with a Dates dimension table and multi-table relationships in Power BI
+  
 - DAX measure writing including SUMX, CALCULATE, AVERAGEX, and cross-table aggregations
+  
 - Cross-domain insight analysis — joining strength, recovery, nutrition, and body composition data
+  
 - Five-page interactive dashboard design with page navigation, slicers, and visual-level filters
+
 - Handling messy, realistic data including missing values and human inconsistency
 
 
